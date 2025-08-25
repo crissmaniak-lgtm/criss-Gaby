@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criss y Gaby - Diseño y Cortes en Madera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #3a2d27; /* Dark wood background */
+        }
+        .font-pacifico { font-family: 'Pacifico', cursive; }
+        .font-lobster { font-family: 'Lobster', cursive; }
+        .nav-link-active {
+            background-color: #b91c1c; /* bg-red-700 */
+            color: white;
+        }
+        .why-us-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#3a2d27] text-white">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-[#4a2e1d] via-[#6d4c36] to-[#4a2e1d] shadow-lg sticky top-0 z-50 border-b-4 border-amber-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center space-x-2">
+                         <div class="p-2 bg-amber-900/50 rounded-lg">
+                            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block h-10 w-20 text-amber-200">
+                                <path d="M4 20L44 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 16L44 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 12L44 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 8L44 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 4L44 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="font-pacifico text-3xl text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5)">
+                            Criss <span class="text-red-500">y</span> Gaby
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <nav id="desktop-nav" class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Inicio</a>
+                        <a href="#services" class="nav-link block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Servicios</a>
+                        <a href="#products" class="nav-link block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Productos</a>
+                        <a href="#contact" class="nav-link block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Contacto</a>
+                    </nav>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-amber-100 hover:text-white hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-amber-900 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="menu-open-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg id="menu-close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link-mobile block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Inicio</a>
+                <a href="#services" class="nav-link-mobile block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Servicios</a>
+                <a href="#products" class="nav-link-mobile block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Productos</a>
+                <a href="#contact" class="nav-link-mobile block md:inline-block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 text-amber-100 hover:bg-amber-800 hover:text-white">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Home Page -->
+        <section id="home" class="page-section relative bg-cover bg-center h-[60vh] flex items-center justify-center text-center" style="background-image: url(https://picsum.photos/seed/workshop/1920/1080)">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative z-10 p-8 max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-lobster text-white mb-4" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.7)">
+                    Arte en Madera, a tu Medida
+                </h1>
+                <p class="text-xl md:text-2xl text-amber-100 mb-8">
+                    Damos vida a tus ideas con diseños y cortes en madera personalizados. Calidad y dedicación en cada pieza.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-20 bg-amber-900/30">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-lobster text-amber-100 mb-2">¿Por qué elegirnos?</h2>
+                <div class="my-6 flex justify-center" aria-hidden="true">
+                    <svg class="w-1/2 text-amber-200" viewBox="2000 8000 17000 1500" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <path d="M3307.78 9326.29c-185.32,59.18 -370.67,118.38 -529.52,93.79 -158.85,-24.59 -291.25,-132.94 -341.03,-241.74 -49.77,-108.82 -16.98,-218.09 63.73,-310.95 80.71,-92.88 209.31,-169.39 325.3,-205.81 115.99,-36.43 219.35,-32.77 385.77,-24.58 166.43,8.18 395.9,20.94 658.16,77.4 262.23,56.45 557.22,156.62 813.17,230.38 255.94,73.76 472.77,121.11 751.41,140.23 278.61,19.12 619.04,10.01 852.28,-32.77 233.24,-42.81 359.3,-119.31 471.51,-214.01 112.22,-94.7 210.54,-207.61 240.82,-299.58 30.25,-91.97 -7.57,-162.98 -71.87,-173.9 -64.3,-10.95 -155.08,38.24 -175.24,142.95 -20.18,104.71 30.25,264.97 118.51,376.97 88.26,112 214.32,175.74 413.53,204.88 199.19,29.14 471.52,23.68 750.16,-17.28 278.61,-40.99 563.55,-117.48 800.59,-153.9 237.01,-36.43 426.11,-32.77 564.8,-17.28 138.7,15.46 226.96,42.78 365.65,112.9 138.66,70.11 327.79,183.02 516.88,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        <path d="M17257.01 9326.29c185.32,59.18 370.67,118.38 529.52,93.79 158.85,-24.59 291.25,-132.94 341.03,-241.74 49.77,-108.82 16.98,-218.09 -63.73,-310.95 -80.71,-92.88 -209.31,-169.39 -325.3,-205.81 -116,-36.43 -219.35,-32.77 -385.78,-24.58 -166.42,8.18 -395.89,20.94 -658.15,77.4 -262.23,56.45 -557.23,156.62 -813.17,230.38 -255.94,73.76 -472.77,121.11 -751.41,140.23 -278.62,19.12 -619.04,10.01 -852.28,-32.77 -233.24,-42.81 -359.3,-119.31 -471.52,-214.01 -112.21,-94.7 -210.54,-207.61 -240.81,-299.58 -30.25,-91.97 7.57,-162.98 71.87,-173.9 64.3,-10.95 155.08,38.24 175.23,142.95 20.19,104.71 -30.24,264.97 -118.5,376.97 -88.26,112 -214.32,175.74 -413.54,204.88 -199.19,29.14 -471.51,23.68 -750.15,-17.28 -278.62,-40.99 -563.55,-117.48 -800.59,-153.9 -237.02,-36.43 -426.11,-32.77 -564.81,-17.28 -138.69,15.46 -226.95,42.78 -365.64,112.9 -138.66,70.11 -327.79,183.02 -516.89,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        <path d="M10517.58 8879.36c1.89,-32.33 22.04,-96.97 73.11,-156.6 51.06,-59.66 133.03,-114.29 246.5,-156.62 113.45,-42.36 258.46,-72.42 370.05,-69.22 111.56,3.18 189.72,39.61 175.86,88.79 -13.87,49.17 -119.8,111.07 -252.8,143.86 -133,32.77 -293.14,36.43 -394.6,61.93 -101.5,25.48 -144.39,72.83 -174.01,96.51 -29.62,23.67 -46.03,23.67 -44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        <path d="M10328.2 8817.42c33.65,-35.93 96.69,-106.04 137.03,-192.08 40.34,-86.07 58.01,-188.05 44.14,-266.36 -13.89,-78.32 -59.26,-132.93 -105.29,-162.98 -46.04,-30.06 -92.67,-35.52 -139.96,-24.14 -47.28,11.38 -95.17,39.61 -129.22,93.79 -34.06,54.18 -54.21,134.3 -42.23,226.73 11.98,92.42 56.09,197.16 91.57,259.41 35.46,62.26 62.22,82.06 77.74,92.49 15.53,10.41 19.79,11.42 24.05,11.09 4.26,-0.35 8.52,-2.05 42.17,-37.95z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        <path d="M10040.8 8879.36c-1.88,-32.33 -22.04,-96.97 -73.1,-156.6 -51.06,-59.66 -133.03,-114.29 -246.51,-156.62 -113.44,-42.36 -258.46,-72.42 -370.04,-69.22 -111.56,3.18 -189.73,39.61 -175.86,88.79 13.86,49.17 119.79,111.07 252.79,143.86 133.01,32.77 293.14,36.43 394.61,61.93 101.49,25.48 144.38,72.83 174,96.51 29.62,23.67 46.03,23.67 44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                    </svg>
+                </div>
+                <div id="why-us-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
+                    <div class="why-us-card bg-amber-800/40 rounded-lg p-8 text-center transition-all duration-500 transform opacity-0 translate-y-4 hover:scale-105 hover:-translate-y-2 shadow-lg border-2 border-amber-800/60">
+                        <div class="flex justify-center items-center mb-4">
+                            <div class="p-4 bg-red-700/80 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Personalización Total</h3>
+                        <p class="text-amber-200">Tus ideas son nuestro plano. Creamos piezas únicas que cuentan tu historia.</p>
+                    </div>
+
+                    <div class="why-us-card bg-amber-800/40 rounded-lg p-8 text-center transition-all duration-500 transform opacity-0 translate-y-4 hover:scale-105 hover:-translate-y-2 shadow-lg border-2 border-amber-800/60" style="transition-delay: 200ms;">
+                        <div class="flex justify-center items-center mb-4">
+                            <div class="p-4 bg-red-700/80 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0L7.86 5.89c-.32.27-.7.42-1.09.42h-2.9c-1.64 0-2.34 2.02-1.08 3.07l2.35 1.74c.29.21.44.58.33.94l-.9 2.78c-.47 1.45 1.26 2.68 2.5 1.83l2.35-1.74c.29-.21.68-.21.97 0l2.35 1.74c1.24.85 2.97-.38 2.5-1.83l-.9-2.78c-.11-.36.04-.73.33-.94l2.35-1.74c1.26-1.05.56-3.07-1.08-3.07h-2.9c-.39 0-.77-.15-1.09-.42L11.49 3.17z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Calidad Artesanal</h3>
+                        <p class="text-amber-200">Cada corte es preciso, cada acabado es perfecto. Usamos los mejores materiales.</p>
+                    </div>
+
+                    <div class="why-us-card bg-amber-800/40 rounded-lg p-8 text-center transition-all duration-500 transform opacity-0 translate-y-4 hover:scale-105 hover:-translate-y-2 shadow-lg border-2 border-amber-800/60" style="transition-delay: 400ms;">
+                         <div class="flex justify-center items-center mb-4">
+                            <div class="p-4 bg-red-700/80 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                  <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                                  <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h1a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mt-4 mb-2">Servicio Cercano</h3>
+                        <p class="text-amber-200">Te acompañamos en cada paso, desde el diseño hasta la entrega de tu producto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page -->
+        <section id="services" class="page-section bg-amber-900/30 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-lobster text-amber-100 mb-2">Nuestro Servicio de Corte Láser</h1>
+                    <div class="my-6 flex justify-center" aria-hidden="true">
+                       <svg class="w-1/2 text-amber-200" viewBox="2000 8000 17000 1500" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <path d="M3307.78 9326.29c-185.32,59.18 -370.67,118.38 -529.52,93.79 -158.85,-24.59 -291.25,-132.94 -341.03,-241.74 -49.77,-108.82 -16.98,-218.09 63.73,-310.95 80.71,-92.88 209.31,-169.39 325.3,-205.81 115.99,-36.43 219.35,-32.77 385.77,-24.58 166.43,8.18 395.9,20.94 658.16,77.4 262.23,56.45 557.22,156.62 813.17,230.38 255.94,73.76 472.77,121.11 751.41,140.23 278.61,19.12 619.04,10.01 852.28,-32.77 233.24,-42.81 359.3,-119.31 471.51,-214.01 112.22,-94.7 210.54,-207.61 240.82,-299.58 30.25,-91.97 -7.57,-162.98 -71.87,-173.9 -64.3,-10.95 -155.08,38.24 -175.24,142.95 -20.18,104.71 30.25,264.97 118.51,376.97 88.26,112 214.32,175.74 413.53,204.88 199.19,29.14 471.52,23.68 750.16,-17.28 278.61,-40.99 563.55,-117.48 800.59,-153.9 237.01,-36.43 426.11,-32.77 564.8,-17.28 138.7,15.46 226.96,42.78 365.65,112.9 138.66,70.11 327.79,183.02 516.88,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M17257.01 9326.29c185.32,59.18 370.67,118.38 529.52,93.79 158.85,-24.59 291.25,-132.94 341.03,-241.74 49.77,-108.82 16.98,-218.09 -63.73,-310.95 -80.71,-92.88 -209.31,-169.39 -325.3,-205.81 -116,-36.43 -219.35,-32.77 -385.78,-24.58 -166.42,8.18 -395.89,20.94 -658.15,77.4 -262.23,56.45 -557.23,156.62 -813.17,230.38 -255.94,73.76 -472.77,121.11 -751.41,140.23 -278.62,19.12 -619.04,10.01 -852.28,-32.77 -233.24,-42.81 -359.3,-119.31 -471.52,-214.01 -112.21,-94.7 -210.54,-207.61 -240.81,-299.58 -30.25,-91.97 7.57,-162.98 71.87,-173.9 64.3,-10.95 155.08,38.24 175.23,142.95 20.19,104.71 -30.24,264.97 -118.5,376.97 -88.26,112 -214.32,175.74 -413.54,204.88 -199.19,29.14 -471.51,23.68 -750.15,-17.28 -278.62,-40.99 -563.55,-117.48 -800.59,-153.9 -237.02,-36.43 -426.11,-32.77 -564.81,-17.28 -138.69,15.46 -226.95,42.78 -365.64,112.9 -138.66,70.11 -327.79,183.02 -516.89,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10517.58 8879.36c1.89,-32.33 22.04,-96.97 73.11,-156.6 51.06,-59.66 133.03,-114.29 246.5,-156.62 113.45,-42.36 258.46,-72.42 370.05,-69.22 111.56,3.18 189.72,39.61 175.86,88.79 -13.87,49.17 -119.8,111.07 -252.8,143.86 -133,32.77 -293.14,36.43 -394.6,61.93 -101.5,25.48 -144.39,72.83 -174.01,96.51 -29.62,23.67 -46.03,23.67 -44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10328.2 8817.42c33.65,-35.93 96.69,-106.04 137.03,-192.08 40.34,-86.07 58.01,-188.05 44.14,-266.36 -13.89,-78.32 -59.26,-132.93 -105.29,-162.98 -46.04,-30.06 -92.67,-35.52 -139.96,-24.14 -47.28,11.38 -95.17,39.61 -129.22,93.79 -34.06,54.18 -54.21,134.3 -42.23,226.73 11.98,92.42 56.09,197.16 91.57,259.41 35.46,62.26 62.22,82.06 77.74,92.49 15.53,10.41 19.79,11.42 24.05,11.09 4.26,-0.35 8.52,-2.05 42.17,-37.95z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10040.8 8879.36c-1.88,-32.33 -22.04,-96.97 -73.1,-156.6 -51.06,-59.66 -133.03,-114.29 -246.51,-156.62 -113.44,-42.36 -258.46,-72.42 -370.04,-69.22 -111.56,3.18 -189.73,39.61 -175.86,88.79 13.86,49.17 119.79,111.07 252.79,143.86 133.01,32.77 293.14,36.43 394.61,61.93 101.49,25.48 144.38,72.83 174,96.51 29.62,23.67 46.03,23.67 44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        </svg>
+                    </div>
+                    <p class="text-lg text-amber-200">
+                        Utilizamos tecnología de corte láser de alta precisión para materializar tus proyectos en madera con acabados impecables. Ideal para regalos personalizados, decoración, prototipos y mucho más.
+                    </p>
+                </div>
+                <div class="mt-20">
+                    <h2 class="text-3xl font-lobster text-center text-amber-100 mb-2">¿Cómo funciona?</h2>
+                    <div class="my-6 flex justify-center" aria-hidden="true">
+                        <svg class="w-1/2 text-amber-200" viewBox="2000 8000 17000 1500" xmlns="http://www.w3.org/2000/svg" fill="none">
+                           <path d="M3307.78 9326.29c-185.32,59.18 -370.67,118.38 -529.52,93.79 -158.85,-24.59 -291.25,-132.94 -341.03,-241.74 -49.77,-108.82 -16.98,-218.09 63.73,-310.95 80.71,-92.88 209.31,-169.39 325.3,-205.81 115.99,-36.43 219.35,-32.77 385.77,-24.58 166.43,8.18 395.9,20.94 658.16,77.4 262.23,56.45 557.22,156.62 813.17,230.38 255.94,73.76 472.77,121.11 751.41,140.23 278.61,19.12 619.04,10.01 852.28,-32.77 233.24,-42.81 359.3,-119.31 471.51,-214.01 112.22,-94.7 210.54,-207.61 240.82,-299.58 30.25,-91.97 -7.57,-162.98 -71.87,-173.9 -64.3,-10.95 -155.08,38.24 -175.24,142.95 -20.18,104.71 30.25,264.97 118.51,376.97 88.26,112 214.32,175.74 413.53,204.88 199.19,29.14 471.52,23.68 750.16,-17.28 278.61,-40.99 563.55,-117.48 800.59,-153.9 237.01,-36.43 426.11,-32.77 564.8,-17.28 138.7,15.46 226.96,42.78 365.65,112.9 138.66,70.11 327.79,183.02 516.88,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M17257.01 9326.29c185.32,59.18 370.67,118.38 529.52,93.79 158.85,-24.59 291.25,-132.94 341.03,-241.74 49.77,-108.82 16.98,-218.09 -63.73,-310.95 -80.71,-92.88 -209.31,-169.39 -325.3,-205.81 -116,-36.43 -219.35,-32.77 -385.78,-24.58 -166.42,8.18 -395.89,20.94 -658.15,77.4 -262.23,56.45 -557.23,156.62 -813.17,230.38 -255.94,73.76 -472.77,121.11 -751.41,140.23 -278.62,19.12 -619.04,10.01 -852.28,-32.77 -233.24,-42.81 -359.3,-119.31 -471.52,-214.01 -112.21,-94.7 -210.54,-207.61 -240.81,-299.58 -30.25,-91.97 7.57,-162.98 71.87,-173.9 64.3,-10.95 155.08,38.24 175.23,142.95 20.19,104.71 -30.24,264.97 -118.5,376.97 -88.26,112 -214.32,175.74 -413.54,204.88 -199.19,29.14 -471.51,23.68 -750.15,-17.28 -278.62,-40.99 -563.55,-117.48 -800.59,-153.9 -237.02,-36.43 -426.11,-32.77 -564.81,-17.28 -138.69,15.46 -226.95,42.78 -365.64,112.9 -138.66,70.11 -327.79,183.02 -516.89,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10517.58 8879.36c1.89,-32.33 22.04,-96.97 73.11,-156.6 51.06,-59.66 133.03,-114.29 246.5,-156.62 113.45,-42.36 258.46,-72.42 370.05,-69.22 111.56,3.18 189.72,39.61 175.86,88.79 -13.87,49.17 -119.8,111.07 -252.8,143.86 -133,32.77 -293.14,36.43 -394.6,61.93 -101.5,25.48 -144.39,72.83 -174.01,96.51 -29.62,23.67 -46.03,23.67 -44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10328.2 8817.42c33.65,-35.93 96.69,-106.04 137.03,-192.08 40.34,-86.07 58.01,-188.05 44.14,-266.36 -13.89,-78.32 -59.26,-132.93 -105.29,-162.98 -46.04,-30.06 -92.67,-35.52 -139.96,-24.14 -47.28,11.38 -95.17,39.61 -129.22,93.79 -34.06,54.18 -54.21,134.3 -42.23,226.73 11.98,92.42 56.09,197.16 91.57,259.41 35.46,62.26 62.22,82.06 77.74,92.49 15.53,10.41 19.79,11.42 24.05,11.09 4.26,-0.35 8.52,-2.05 42.17,-37.95z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10040.8 8879.36c-1.88,-32.33 -22.04,-96.97 -73.1,-156.6 -51.06,-59.66 -133.03,-114.29 -246.51,-156.62 -113.44,-42.36 -258.46,-72.42 -370.04,-69.22 -111.56,3.18 -189.73,39.61 -175.86,88.79 13.86,49.17 119.79,111.07 252.79,143.86 133.01,32.77 293.14,36.43 394.61,61.93 101.49,25.48 144.38,72.83 174,96.51 29.62,23.67 46.03,23.67 44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        </svg>
+                    </div>
+                    <div id="how-it-works-carousel" class="relative w-full overflow-hidden cursor-pointer">
+                        <div id="carousel-track" class="flex gap-10">
+                            <!-- Original Cards -->
+                            <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/design/150/150" alt="Diseño y Conceptualización" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">1. Diseño y Conceptualización</h3>
+                                <p class="text-amber-200">Nos traes tu idea o la creamos juntos. Preparamos el diseño digital para asegurar que cada detalle sea perfecto.</p>
+                            </div>
+                            <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/laser/150/150" alt="Corte Láser" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">2. Corte y Grabado Láser</h3>
+                                <p class="text-amber-200">Nuestro equipo láser de última generación corta y graba con una precisión milimétrica, garantizando un resultado profesional.</p>
+                            </div>
+                            <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/package/150/150" alt="Entrega del Producto" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">3. Acabado y Entrega</h3>
+                                <p class="text-amber-200">Cada pieza es lijada, pintada y barnizada a mano. Luego, te entregamos tu producto listo para disfrutar.</p>
+                            </div>
+                            <!-- Duplicate Cards for seamless loop -->
+                            <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/design/150/150" alt="Diseño y Conceptualización" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">1. Diseño y Conceptualización</h3>
+                                <p class="text-amber-200">Nos traes tu idea o la creamos juntos. Preparamos el diseño digital para asegurar que cada detalle sea perfecto.</p>
+                            </div>
+                            <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/laser/150/150" alt="Corte Láser" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">2. Corte y Grabado Láser</h3>
+                                <p class="text-amber-200">Nuestro equipo láser de última generación corta y graba con una precisión milimétrica, garantizando un resultado profesional.</p>
+                            </div>
+                             <div class="flex-shrink-0 w-[90vw] md:w-[40vw] lg:w-[30vw] bg-amber-800/40 p-8 rounded-lg shadow-lg flex flex-col items-center text-center">
+                                <img src="https://picsum.photos/seed/package/150/150" alt="Entrega del Producto" class="rounded-full mb-6 w-32 h-32 object-cover border-4 border-amber-700 shadow-lg">
+                                <h3 class="text-2xl font-bold text-white mb-3">3. Acabado y Entrega</h3>
+                                <p class="text-amber-200">Cada pieza es lijada, pintada y barnizada a mano. Luego, te entregamos tu producto listo para disfrutar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section id="products" class="page-section bg-amber-900/30 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto mb-12">
+                    <h1 class="text-4xl md:text-5xl font-lobster text-amber-100 mb-2">Catálogo de Productos</h1>
+                    <div class="my-6 flex justify-center" aria-hidden="true">
+                        <svg class="w-1/2 text-amber-200" viewBox="2000 8000 17000 1500" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <path d="M3307.78 9326.29c-185.32,59.18 -370.67,118.38 -529.52,93.79 -158.85,-24.59 -291.25,-132.94 -341.03,-241.74 -49.77,-108.82 -16.98,-218.09 63.73,-310.95 80.71,-92.88 209.31,-169.39 325.3,-205.81 115.99,-36.43 219.35,-32.77 385.77,-24.58 166.43,8.18 395.9,20.94 658.16,77.4 262.23,56.45 557.22,156.62 813.17,230.38 255.94,73.76 472.77,121.11 751.41,140.23 278.61,19.12 619.04,10.01 852.28,-32.77 233.24,-42.81 359.3,-119.31 471.51,-214.01 112.22,-94.7 210.54,-207.61 240.82,-299.58 30.25,-91.97 -7.57,-162.98 -71.87,-173.9 -64.3,-10.95 -155.08,38.24 -175.24,142.95 -20.18,104.71 30.25,264.97 118.51,376.97 88.26,112 214.32,175.74 413.53,204.88 199.19,29.14 471.52,23.68 750.16,-17.28 278.61,-40.99 563.55,-117.48 800.59,-153.9 237.01,-36.43 426.11,-32.77 564.8,-17.28 138.7,15.46 226.96,42.78 365.65,112.9 138.66,70.11 327.79,183.02 516.88,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M17257.01 9326.29c185.32,59.18 370.67,118.38 529.52,93.79 158.85,-24.59 291.25,-132.94 341.03,-241.74 49.77,-108.82 16.98,-218.09 -63.73,-310.95 -80.71,-92.88 -209.31,-169.39 -325.3,-205.81 -116,-36.43 -219.35,-32.77 -385.78,-24.58 -166.42,8.18 -395.89,20.94 -658.15,77.4 -262.23,56.45 -557.23,156.62 -813.17,230.38 -255.94,73.76 -472.77,121.11 -751.41,140.23 -278.62,19.12 -619.04,10.01 -852.28,-32.77 -233.24,-42.81 -359.3,-119.31 -471.52,-214.01 -112.21,-94.7 -210.54,-207.61 -240.81,-299.58 -30.25,-91.97 7.57,-162.98 71.87,-173.9 64.3,-10.95 155.08,38.24 175.23,142.95 20.19,104.71 -30.24,264.97 -118.5,376.97 -88.26,112 -214.32,175.74 -413.54,204.88 -199.19,29.14 -471.51,23.68 -750.15,-17.28 -278.62,-40.99 -563.55,-117.48 -800.59,-153.9 -237.02,-36.43 -426.11,-32.77 -564.81,-17.28 -138.69,15.46 -226.95,42.78 -365.64,112.9 -138.66,70.11 -327.79,183.02 -516.89,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10517.58 8879.36c1.89,-32.33 22.04,-96.97 73.11,-156.6 51.06,-59.66 133.03,-114.29 246.5,-156.62 113.45,-42.36 258.46,-72.42 370.05,-69.22 111.56,3.18 189.72,39.61 175.86,88.79 -13.87,49.17 -119.8,111.07 -252.8,143.86 -133,32.77 -293.14,36.43 -394.6,61.93 -101.5,25.48 -144.39,72.83 -174.01,96.51 -29.62,23.67 -46.03,23.67 -44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10328.2 8817.42c33.65,-35.93 96.69,-106.04 137.03,-192.08 40.34,-86.07 58.01,-188.05 44.14,-266.36 -13.89,-78.32 -59.26,-132.93 -105.29,-162.98 -46.04,-30.06 -92.67,-35.52 -139.96,-24.14 -47.28,11.38 -95.17,39.61 -129.22,93.79 -34.06,54.18 -54.21,134.3 -42.23,226.73 11.98,92.42 56.09,197.16 91.57,259.41 35.46,62.26 62.22,82.06 77.74,92.49 15.53,10.41 19.79,11.42 24.05,11.09 4.26,-0.35 8.52,-2.05 42.17,-37.95z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10040.8 8879.36c-1.88,-32.33 -22.04,-96.97 -73.1,-156.6 -51.06,-59.66 -133.03,-114.29 -246.51,-156.62 -113.44,-42.36 -258.46,-72.42 -370.04,-69.22 -111.56,3.18 -189.73,39.61 -175.86,88.79 13.86,49.17 119.79,111.07 252.79,143.86 133.01,32.77 293.14,36.43 394.61,61.93 101.49,25.48 144.38,72.83 174,96.51 29.62,23.67 46.03,23.67 44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        </svg>
+                    </div>
+                    <p class="text-lg text-amber-200">
+                        Explora nuestra colección de creaciones en madera. Cada pieza es personalizable y hecha con pasión.
+                    </p>
+                </div>
+
+                <div id="product-view-header" class="hidden text-center mb-12">
+                     <button id="back-to-categories" class="mb-8 bg-red-700 text-white font-bold py-2 px-6 rounded-lg text-lg hover:bg-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        Volver a Categorías
+                    </button>
+                    <h2 id="current-category-title" class="text-3xl md:text-4xl font-lobster text-amber-100"></h2>
+                </div>
+                
+                <div id="category-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Category cards will be inserted here by JavaScript -->
+                </div>
+
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Product cards will be inserted here by JavaScript -->
+                </div>
+
+                <div id="product-view-footer" class="hidden text-center mt-12">
+                     <button id="back-to-categories-bottom" class="bg-red-700 text-white font-bold py-2 px-6 rounded-lg text-lg hover:bg-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        Volver a Categorías
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="contact" class="page-section bg-amber-900/30 py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-lobster text-amber-100 mb-2">Contáctanos</h1>
+                    <div class="my-6 flex justify-center" aria-hidden="true">
+                        <svg class="w-1/2 text-amber-200" viewBox="2000 8000 17000 1500" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <path d="M3307.78 9326.29c-185.32,59.18 -370.67,118.38 -529.52,93.79 -158.85,-24.59 -291.25,-132.94 -341.03,-241.74 -49.77,-108.82 -16.98,-218.09 63.73,-310.95 80.71,-92.88 209.31,-169.39 325.3,-205.81 115.99,-36.43 219.35,-32.77 385.77,-24.58 166.43,8.18 395.9,20.94 658.16,77.4 262.23,56.45 557.22,156.62 813.17,230.38 255.94,73.76 472.77,121.11 751.41,140.23 278.61,19.12 619.04,10.01 852.28,-32.77 233.24,-42.81 359.3,-119.31 471.51,-214.01 112.22,-94.7 210.54,-207.61 240.82,-299.58 30.25,-91.97 -7.57,-162.98 -71.87,-173.9 -64.3,-10.95 -155.08,38.24 -175.24,142.95 -20.18,104.71 30.25,264.97 118.51,376.97 88.26,112 214.32,175.74 413.53,204.88 199.19,29.14 471.52,23.68 750.16,-17.28 278.61,-40.99 563.55,-117.48 800.59,-153.9 237.01,-36.43 426.11,-32.77 564.8,-17.28 138.7,15.46 226.96,42.78 365.65,112.9 138.66,70.11 327.79,183.02 516.88,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M17257.01 9326.29c185.32,59.18 370.67,118.38 529.52,93.79 158.85,-24.59 291.25,-132.94 341.03,-241.74 49.77,-108.82 16.98,-218.09 -63.73,-310.95 -80.71,-92.88 -209.31,-169.39 -325.3,-205.81 -116,-36.43 -219.35,-32.77 -385.78,-24.58 -166.42,8.18 -395.89,20.94 -658.15,77.4 -262.23,56.45 -557.23,156.62 -813.17,230.38 -255.94,73.76 -472.77,121.11 -751.41,140.23 -278.62,19.12 -619.04,10.01 -852.28,-32.77 -233.24,-42.81 -359.3,-119.31 -471.52,-214.01 -112.21,-94.7 -210.54,-207.61 -240.81,-299.58 -30.25,-91.97 7.57,-162.98 71.87,-173.9 64.3,-10.95 155.08,38.24 175.23,142.95 20.19,104.71 -30.24,264.97 -118.5,376.97 -88.26,112 -214.32,175.74 -413.54,204.88 -199.19,29.14 -471.51,23.68 -750.15,-17.28 -278.62,-40.99 -563.55,-117.48 -800.59,-153.9 -237.02,-36.43 -426.11,-32.77 -564.81,-17.28 -138.69,15.46 -226.95,42.78 -365.64,112.9 -138.66,70.11 -327.79,183.02 -516.89,295.93" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10517.58 8879.36c1.89,-32.33 22.04,-96.97 73.11,-156.6 51.06,-59.66 133.03,-114.29 246.5,-156.62 113.45,-42.36 258.46,-72.42 370.05,-69.22 111.56,3.18 189.72,39.61 175.86,88.79 -13.87,49.17 -119.8,111.07 -252.8,143.86 -133,32.77 -293.14,36.43 -394.6,61.93 -101.5,25.48 -144.39,72.83 -174.01,96.51 -29.62,23.67 -46.03,23.67 -44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10328.2 8817.42c33.65,-35.93 96.69,-106.04 137.03,-192.08 40.34,-86.07 58.01,-188.05 44.14,-266.36 -13.89,-78.32 -59.26,-132.93 -105.29,-162.98 -46.04,-30.06 -92.67,-35.52 -139.96,-24.14 -47.28,11.38 -95.17,39.61 -129.22,93.79 -34.06,54.18 -54.21,134.3 -42.23,226.73 11.98,92.42 56.09,197.16 91.57,259.41 35.46,62.26 62.22,82.06 77.74,92.49 15.53,10.41 19.79,11.42 24.05,11.09 4.26,-0.35 8.52,-2.05 42.17,-37.95z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                            <path d="M10040.8 8879.36c-1.88,-32.33 -22.04,-96.97 -73.1,-156.6 -51.06,-59.66 -133.03,-114.29 -246.51,-156.62 -113.44,-42.36 -258.46,-72.42 -370.04,-69.22 -111.56,3.18 -189.73,39.61 -175.86,88.79 13.86,49.17 119.79,111.07 252.79,143.86 133.01,32.77 293.14,36.43 394.61,61.93 101.49,25.48 144.38,72.83 174,96.51 29.62,23.67 46.03,23.67 44.11,-8.65z" stroke="currentColor" stroke-width="100" stroke-miterlimit="22.9256"/>
+                        </svg>
+                    </div>
+                    <p class="text-lg text-amber-200">
+                        ¿Tienes una idea o consulta? Estamos aquí para ayudarte a hacerla realidad.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+                    <div class="bg-amber-800/40 p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-white mb-6">Envíanos un mensaje</h2>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-white mb-2">Nombre</label>
+                                <input type="text" id="name" class="w-full p-3 bg-amber-900/50 text-white rounded-md border-2 border-amber-700 focus:ring-red-500 focus:border-red-500 transition" required />
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-white mb-2">Correo Electrónico</label>
+                                <input type="email" id="email" class="w-full p-3 bg-amber-900/50 text-white rounded-md border-2 border-amber-700 focus:ring-red-500 focus:border-red-500 transition" required />
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-white mb-2">Mensaje</label>
+                                <textarea id="message" rows="5" class="w-full p-3 bg-amber-900/50 text-white rounded-md border-2 border-amber-700 focus:ring-red-500 focus:border-red-500 transition" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-800 transition-all duration-300">
+                                Enviar Mensaje
+                            </button>
+                            <p id="contact-status" class="mt-4 text-center text-green-300"></p>
+                        </form>
+                    </div>
+                    <div class="space-y-8">
+                        <div class="bg-amber-800/40 p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-white mb-4">Información de Contacto</h3>
+                            <a href="https://wa.me/+56971979498" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 mb-4 group">
+                                <div class="bg-green-500 p-3 rounded-full group-hover:bg-green-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">WhatsApp</p>
+                                    <p class="text-amber-200 group-hover:text-white transition-colors">+56 9 7197 9498</p>
+                                </div>
+                            </a>
+                            <a href="mailto:contacto@crissygaby.cl" class="flex items-center space-x-4 group">
+                                <div class="bg-red-700 p-3 rounded-full group-hover:bg-red-800 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Email</p>
+                                    <p class="text-amber-200 group-hover:text-white transition-colors">contacto@crissygaby.cl</p>
+                                </div>
+                            </a>
+                            <div class="flex items-start space-x-4 pt-6 mt-6 border-t border-amber-800/50">
+                                <div class="bg-amber-700 p-3 rounded-full flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-white">Nuestra Ubicación</p>
+                                    <p class="text-amber-200">Vallenar, Región de Atacama, Chile.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-[#2a1f18] via-[#4a2e1d] to-[#2a1f18] text-amber-100 border-t-4 border-amber-900">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-pacifico text-2xl text-white mb-2">Criss y Gaby</h3>
+                    <p class="text-amber-200">Diseño y cortes en madera</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white uppercase tracking-wider mb-4">Contacto Directo</h3>
+                    <a href="https://wa.me/+56971979498" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-amber-200 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                     <div class="flex items-center justify-center md:justify-start space-x-2 mt-2 text-amber-200">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <span>+56 9 7197 9498</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-white uppercase tracking-wider mb-4">Horario</h3>
+                    <p class="text-amber-200">Lunes a Viernes</p>
+                    <p class="text-amber-200">9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-amber-800/50 text-center text-amber-300 text-sm">
+                <p>&copy; 2024 Criss y Gaby. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module">
+        // --- Data ---
+        const categories = [
+          'Cuadros Personalizados', 'Relojes de Pared', 'Cofres Artesanales', 'Tablas para Picoteo', 'Llaveros', 'Recuerdos de Ocasión', 'Lámparas de Acrílico', 'Portalápiz', 'Posa Vasos', 'Cajas para Té', 'Galvanos', 'Coleccionables', 'Letreros y Letras',
+        ];
+
+        const products = [
+          { id: 'cuadro-pequeno-30', category: 'Cuadros Personalizados', name: 'Cuadro Pequeño', description: 'Personalizado, pintado y sellado con barniz.', size: '30x30 cm', price: 25000, imageUrl: 'https://picsum.photos/seed/cuadro1/500/500' },
+          { id: 'cuadro-pequeno-40', category: 'Cuadros Personalizados', name: 'Cuadro Pequeño', description: 'Personalizado, pintado y sellado con barniz.', size: '40x40 cm', price: 30000, imageUrl: 'https://picsum.photos/seed/cuadro2/500/500' },
+          { id: 'cuadro-mediano-60', category: 'Cuadros Personalizados', name: 'Cuadro Mediano', description: 'Personalizado, pintado y sellado con barniz.', size: '60x60 cm', price: 40000, imageUrl: 'https://picsum.photos/seed/cuadro3/500/500' },
+          { id: 'cuadro-grande-87', category: 'Cuadros Personalizados', name: 'Cuadro Grande', description: 'Personalizado, pintado y sellado con barniz.', size: '87x60 cm', price: 45000, imageUrl: 'https://picsum.photos/seed/cuadro4/500/500' },
+          { id: 'cuadro-set', category: 'Cuadros Personalizados', name: 'Set de 3 Cuadros', description: 'Personalizado, pintado y sellado con barniz.', size: 'Área total: 135x87 cm (3 de 87x45 cm)', price: 90000, imageUrl: 'https://picsum.photos/seed/cuadro5/500/500' },
+          { id: 'reloj-mediano-30', category: 'Relojes de Pared', name: 'Reloj de Pared Mediano', description: 'Personalizado, sellado con barniz. No incluye pilas.', size: '30 cm de diámetro', price: 20000, imageUrl: 'https://picsum.photos/seed/reloj1/500/500' },
+          { id: 'reloj-grande-60', category: 'Relojes de Pared', name: 'Reloj de Pared Grande', description: 'Personalizado, sellado con barniz. No incluye pilas.', size: '60 cm de diámetro', price: 45000, imageUrl: 'https://picsum.photos/seed/reloj2/500/500' },
+          { id: 'cofre-pequeno', category: 'Cofres Artesanales', name: 'Cofre Artesanal Pequeño', description: 'Con mdf de 3 mm, sellado con barniz.', size: '18x9x12 cm', price: 15000, imageUrl: 'https://picsum.photos/seed/cofre1/500/500' },
+          { id: 'cofre-mediano', category: 'Cofres Artesanales', name: 'Cofre Artesanal Mediano', description: 'Con mdf de 5,5 mm, sellado con barniz.', size: '40x17x23 cm', price: 40000, imageUrl: 'https://picsum.photos/seed/cofre2/500/500' },
+          { id: 'cofre-grande', category: 'Cofres Artesanales', name: 'Cofre Artesanal Grande', description: 'Con mdf de 5,5 mm, sellado con barniz.', size: '48x26x33 cm', price: 60000, imageUrl: 'https://picsum.photos/seed/cofre3/500/500' },
+          { id: 'tabla-picoteo-pequena', category: 'Tablas para Picoteo', name: 'Tabla para Picoteo Pequeña', description: 'Con logo personalizado y sellada con cera de abeja.', size: '30x23 cm', price: 14000, imageUrl: 'https://picsum.photos/seed/tabla1/500/500' },
+          { id: 'tabla-picoteo-mediana-1', category: 'Tablas para Picoteo', name: 'Tabla para Picoteo Mediana', description: 'Con logo personalizado y sellada con cera de abeja.', size: '23x40 cm', price: 18000, imageUrl: 'https://picsum.photos/seed/tabla2/500/500' },
+          { id: 'tabla-picoteo-mediana-2', category: 'Tablas para Picoteo', name: 'Tabla para Picoteo Mediana', description: 'Con logo personalizado y sellada con cera de abeja.', size: '23x45 cm', price: 20000, imageUrl: 'https://picsum.photos/seed/tabla3/500/500' },
+          { id: 'tabla-picoteo-grande-1', category: 'Tablas para Picoteo', name: 'Tabla para Picoteo Grande', description: 'Con logo personalizado y sellada con cera de abeja.', size: '60x23 cm', price: 26000, imageUrl: 'https://picsum.photos/seed/tabla4/500/500' },
+          { id: 'tabla-picoteo-grande-2', category: 'Tablas para Picoteo', name: 'Tabla para Picoteo Grande', description: 'Con logo personalizado y sellada con cera de abeja.', size: '80x23 cm', price: 33000, imageUrl: 'https://picsum.photos/seed/tabla5/500/500' },
+          { id: 'galvano-acrilico', category: 'Galvanos', name: 'Galvano Personalizado', description: 'De acrílico com papel fotográfico y base de madera.', price: 15000, imageUrl: 'https://picsum.photos/seed/galvano1/500/500' },
+          { id: 'posa-vasos', category: 'Posa Vasos', name: 'Posa Vasos Personalizados', description: 'Set de 6 posa vasos de 10 cm de diámetro.', price: '6 x $10.000', imageUrl: 'https://picsum.photos/seed/posavaso1/500/500' },
+          { id: 'llavero-madera', category: 'Llaveros', name: 'Llavero de Madera', description: 'Personalizado de 5x5 cm barnizado.', price: null, details: ['$1.300 c/u', 'Precio sobre 10 unidades: $1.150 c/u', 'Precio sobre 50 unidades: $1.000 c/u'], imageUrl: 'https://picsum.photos/seed/llavero1/500/500' },
+          { id: 'llavero-acrilico', category: 'Llaveros', name: 'Llavero de Acrílico', description: 'Personalizado de acrílico 6 cm.', price: null, details: ['$3.000 c/u', 'Precio sobre 10 unidades: $2.700 c/u', 'Precio sobre 50 unidades: $2.500 c/u'], imageUrl: 'https://picsum.photos/seed/llavero2/500/500' },
+          { id: 'portalapiz', category: 'Portalápiz', name: 'Portalápiz Personalizado', description: 'Ideal para escritorios y regalos corporativos.', price: 15000, imageUrl: 'https://picsum.photos/seed/portalapiz1/500/500' },
+          { id: 'caja-te', category: 'Cajas para Té', name: 'Caja para Té', description: 'Elegante caja de madera para guardar té.', price: 10000, imageUrl: 'https://picsum.photos/seed/cajate1/500/500' },
+          { id: 'recuerdo-ocasion', category: 'Recuerdos de Ocasión', name: 'Recuerdo Personalizado Barnizado', description: 'De 10x5 cm, ideal para eventos.', price: null, details: ['$1.300 c/u', 'Precio sobre 10 unidades: $1.150 c/u', 'Precio sobre 50 unidades: $1.000 c/u'], imageUrl: 'https://picsum.photos/seed/recuerdo1/500/500' },
+          { id: 'reloj-perpetuo', category: 'Recuerdos de Ocasión', name: 'Reloj Perpetuo Personalizado', description: 'Un regalo original y duradero.', size: '15x13 cm', price: 10000, imageUrl: 'https://picsum.photos/seed/recuerdo2/500/500' },
+          { id: 'caja-corazon', category: 'Recuerdos de Ocasión', name: 'Caja Corazón', description: 'Pequeña caja con diseño de corazón.', price: 7000, imageUrl: 'https://picsum.photos/seed/recuerdo3/500/500' },
+          { id: 'marco-foto-acrilico', category: 'Recuerdos de Ocasión', name: 'Marco de 20x30 cm + Foto + Acrílico', description: 'Marco personalizado para tus fotos favoritas.', price: 15000, imageUrl: 'https://picsum.photos/seed/recuerdo4/500/500' },
+          { id: 'florero', category: 'Recuerdos de Ocasión', name: 'Florero', description: 'Florero de 25 cm de alto.', price: 10000, imageUrl: 'https://picsum.photos/seed/recuerdo5/500/500' },
+          { id: 'recuerdo-especial', category: 'Recuerdos de Ocasión', name: 'Recuerdos para eventos especiales', description: 'Diseños personalizados para pascua, navidad, bautizos, etc.', price: null, imageUrl: 'https://picsum.photos/seed/recuerdo6/500/500' },
+          { id: 'lampara-acrilico', category: 'Lámparas de Acrílico', name: 'Lámpara de Acrílico Personalizada', description: 'Base LED con luz de diferentes colores y figura de acrílico personalizada.', price: '20.000 c/u', imageUrl: 'https://picsum.photos/seed/lampara1/500/500' },
+          { id: 'coleccionable-barco', category: 'Coleccionables', name: 'Barco Destructor', description: 'Modelo a escala con terminación barnizada. Dos tamaños disponibles.', price: null, details: ['Tamaño 1: $40.000', 'Tamaño 2: $60.000'], imageUrl: 'https://picsum.photos/seed/barco1/500/500' },
+          { id: 'letrero-personalizado', category: 'Letreros y Letras', name: 'Letrero Personalizado a Pedido', description: 'Creamos letreros y letras con el diseño que necesites.', price: null, imageUrl: 'https://picsum.photos/seed/letrero1/500/500' },
+        ];
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Header Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-open-icon');
+            const closeIcon = document.getElementById('menu-close-icon');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                openIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.nav-link-mobile').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+            
+            // --- "Why Us" Card Animation ---
+            const whyUsCardsContainer = document.getElementById('why-us-cards');
+            if (whyUsCardsContainer) {
+                const cards = whyUsCardsContainer.querySelectorAll('.why-us-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            cards.forEach(card => {
+                                card.classList.add('is-visible');
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                observer.observe(whyUsCardsContainer);
+            }
+
+            // --- Carousel Logic for 'How it works' ---
+            const carousel = document.getElementById('how-it-works-carousel');
+            if (carousel) {
+                const track = carousel.querySelector('#carousel-track');
+                const slides = Array.from(track.children);
+                if (slides.length > 0) {
+                    const realSlidesCount = slides.length / 2;
+                    let currentIndex = 0;
+                    let slideInterval;
+
+                    function updateSlideMetrics() {
+                        const slideWidth = slides[0].getBoundingClientRect().width;
+                        const trackStyle = window.getComputedStyle(track);
+                        const gap = parseFloat(trackStyle.gap);
+                        return { slideWidth, gap };
+                    }
+
+                    function moveToSlide(index, animated = true) {
+                        const { slideWidth, gap } = updateSlideMetrics();
+                        if (slideWidth === 0) return;
+                        
+                        track.style.transition = animated ? 'transform 0.7s ease-in-out' : 'none';
+                        const offset = index * (slideWidth + gap);
+                        track.style.transform = `translateX(-${offset}px)`;
+                    }
+
+                    function advanceSlide() {
+                        currentIndex++;
+                        moveToSlide(currentIndex, true);
+                    }
+                    
+                    track.addEventListener('transitionend', () => {
+                        if (currentIndex >= realSlidesCount) {
+                            currentIndex = 0;
+                            moveToSlide(currentIndex, false);
+                        }
+                    });
+
+                    const startCarousel = () => {
+                        stopCarousel(); // Clear any existing interval
+                        slideInterval = setInterval(advanceSlide, 5000);
+                    };
+
+                    const stopCarousel = () => {
+                        clearInterval(slideInterval);
+                    };
+
+                    carousel.addEventListener('mouseenter', stopCarousel);
+                    carousel.addEventListener('mouseleave', startCarousel);
+                    
+                    window.addEventListener('resize', () => {
+                        // Recalculate and move without animation
+                        moveToSlide(currentIndex, false);
+                    });
+
+                    startCarousel();
+                }
+            }
+
+
+            // --- Products Page Logic ---
+            const categoryGrid = document.getElementById('category-grid');
+            const productGrid = document.getElementById('product-grid');
+            const productViewHeader = document.getElementById('product-view-header');
+            const productViewFooter = document.getElementById('product-view-footer');
+            const backToCategoriesButton = document.getElementById('back-to-categories');
+            const backToCategoriesBottomButton = document.getElementById('back-to-categories-bottom');
+            const currentCategoryTitle = document.getElementById('current-category-title');
+
+
+            function formatPrice(price) {
+                if (price === null) return `<span class="text-lg font-semibold text-amber-300">Consultar valor</span>`;
+                if (typeof price === 'string') return `<span class="text-xl font-bold text-white">${price}</span>`;
+                return `<span class="text-xl font-bold text-white">$${price.toLocaleString('es-CL')}</span>`;
+            }
+
+            function renderProducts(categoryName) {
+                if (!productGrid) return;
+                productGrid.innerHTML = '';
+                const productsToRender = products.filter(p => p.category === categoryName);
+
+                productsToRender.forEach(product => {
+                    const detailsHtml = product.details ? `
+                        <div class="mt-4 text-sm text-amber-200">
+                            <ul>${product.details.map(d => `<li class="list-disc list-inside">${d}</li>`).join('')}</ul>
+                        </div>` : '';
+                    
+                    const sizeHtml = product.size ? `<p class="text-amber-300 text-sm mb-2">Tamaño: ${product.size}</p>` : '';
+
+                    const card = document.createElement('div');
+                    card.className = "bg-amber-900/50 rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-300 ease-in-out flex flex-col h-full border-2 border-amber-800/60";
+                    card.innerHTML = `
+                        <img class="w-full h-56 object-cover" src="${product.imageUrl}" alt="${product.name}" />
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-xl text-white mb-2">${product.name}</h3>
+                            <p class="text-amber-200 text-sm mb-1">${product.category}</p>
+                            ${sizeHtml}
+                            <p class="text-amber-100 flex-grow">${product.description}</p>
+                            ${detailsHtml}
+                        </div>
+                        <div class="p-6 bg-amber-900/70 mt-auto">
+                            ${formatPrice(product.price)}
+                        </div>
+                    `;
+                    productGrid.appendChild(card);
+                });
+            }
+
+            function showProductsForCategory(categoryName) {
+                categoryGrid.classList.add('hidden');
+                productGrid.classList.remove('hidden');
+                productViewHeader.classList.remove('hidden');
+                productViewFooter.classList.remove('hidden');
+                currentCategoryTitle.textContent = categoryName;
+                renderProducts(categoryName);
+            }
+
+            function showCategories() {
+                categoryGrid.classList.remove('hidden');
+                productGrid.classList.add('hidden');
+                productViewHeader.classList.add('hidden');
+                productViewFooter.classList.add('hidden');
+                productGrid.innerHTML = '';
+            }
+
+            function renderCategories() {
+                if (!categoryGrid) return;
+                categoryGrid.innerHTML = '';
+
+                categories.forEach(category => {
+                    const representativeProduct = products.find(p => p.category === category);
+                    const imageUrl = representativeProduct ? representativeProduct.imageUrl : 'https://picsum.photos/seed/placeholder/500/500';
+
+                    const card = document.createElement('div');
+                    card.className = "relative rounded-lg overflow-hidden shadow-lg h-48 flex items-center justify-center text-center p-4 cursor-pointer group transform hover:scale-105 transition-transform duration-300 ease-in-out border-2 border-amber-800/60";
+                    card.style.backgroundImage = `url(${imageUrl})`;
+                    card.style.backgroundSize = 'cover';
+                    card.style.backgroundPosition = 'center';
+
+                    card.innerHTML = `
+                        <div class="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors duration-300"></div>
+                        <h3 class="relative z-10 font-lobster text-2xl text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8)">${category}</h3>
+                    `;
+
+                    card.addEventListener('click', () => showProductsForCategory(category));
+                    categoryGrid.appendChild(card);
+                });
+            }
+
+            if (categoryGrid && productGrid) {
+                renderCategories();
+                productGrid.classList.add('hidden');
+                backToCategoriesButton.addEventListener('click', showCategories);
+                backToCategoriesBottomButton.addEventListener('click', showCategories);
+            }
+
+            // --- Contact Form Logic ---
+            const contactForm = document.getElementById('contact-form');
+            const statusEl = document.getElementById('contact-status');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    statusEl.textContent = '¡Mensaje enviado! Nos pondremos en contacto contigo pronto.';
+                    contactForm.reset();
+                    setTimeout(() => statusEl.textContent = '', 5000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
